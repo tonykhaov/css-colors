@@ -1,10 +1,20 @@
 import * as React from 'react'
+import colors from '../colors'
 
 function App() {
   return (
-    <div className="border border-black">
+    <>
       <h1 className="text-2xl text-center uppercase">css colors</h1>
-    </div>
+      <div>
+        {colors.map((color) => {
+          return (
+            <span className="inline-block w-48 h-24" style={{ backgroundColor: color }} key={color}>
+              {color}
+            </span>
+          )
+        })}
+      </div>
+    </>
   )
 }
 
