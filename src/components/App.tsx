@@ -1,18 +1,15 @@
 import * as React from 'react'
 import colors from '../colors'
+import Color from './Color'
 
 function App() {
   return (
     <>
       <h1 className="text-2xl text-center uppercase">css colors</h1>
-      <div>
-        {colors.map((color) => {
-          return (
-            <span className="inline-block w-48 h-24" style={{ backgroundColor: color }} key={color}>
-              {color}
-            </span>
-          )
-        })}
+      <div className="flex justify-center flex-wrap max-w-[1280px] mx-auto">
+        {colors.map((color) => (
+          <Color key={color} color={color} />
+        ))}
       </div>
     </>
   )
