@@ -6,14 +6,17 @@ type ColorProps = { color: ColorType }
 
 function Color({ color }: ColorProps) {
   const [, copyToClipboard] = useCopyToClipboard()
+
   return (
-    <span
-      className="flex items-center justify-center w-48 h-24 cursor-pointer"
+    <div
+      className="flex items-center justify-center w-64 h-32 cursor-pointer"
       style={{ backgroundColor: color.hex }}
       onClick={() => copyToClipboard(color.hex)}
     >
-      {color.name}
-    </span>
+      <p className="text-xl font-semibold tracking-wide text-white select-none" style={{ backgroundColor: color.hex }}>
+        {color.name}
+      </p>
+    </div>
   )
 }
 
